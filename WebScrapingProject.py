@@ -1,11 +1,12 @@
 import streamlit as st
-from tofler import tofler_func
+from tofler_new import tofler_func
+import pandas as pd
 from zauba import zauba_func
 import time
 flag=0
 def company_list(csv_file):
   df = pd.read_csv(csv_file)
-  l = [i.replace(" LTD", "").replace(" LTD.", "").replace(" Pvt","").replace(" Pvt.","").strip() for i in df["Company Name"].to_list()]
+  l = [i.replace(" LTD", "").replace(" LTD.", "").replace(" Pvt.","").replace(" Pvt","").strip() for i in df["Company Name"].to_list()]
   return l
 st.set_page_config("Data Scraper Project")
 st.markdown("""
@@ -57,6 +58,14 @@ while submit:
       st.write("Fetching details from "+comp)
       try:
         ret = zauba_func(data,flag)
+        # if(flag==1):
+        #   re_li=["Ltd.","Ltd","Limited","Private","Pvt.","Pvt"]
+        #   for j in re_li:
+        #     s=ret.title().replace(j,"")
+        #   if(s not in all_stocks):
+        #     f=open("auto_data.txt","a")
+        #     f.write(s+"\n")
+        #     f.close()
       except Exception:
         st.write("""The site landed onto an error while handling the request.
                     Kindly search again.
