@@ -73,7 +73,7 @@ def tofler_func(option_company,flag):
             reg_d.append(kt)
             table = pd.DataFrame(reg_d, columns=["TYPE", "Value"])
             table.index = range(1, len(table) + 1)
-            st.markdown('<div class="heading">Registration Details</div>', unsafe_allow_html=True)
+            st.markdown('<h2>Registration Details</h2>', unsafe_allow_html=True)
             # st.markdown(f'<div class="output-box">{content_dir}</div>', unsafe_allow_html=True)
             st.dataframe(table, use_container_width=True)
         except Exception:
@@ -98,7 +98,7 @@ def tofler_func(option_company,flag):
                 dir_table.append([des, name, din, tenure])
             table = pd.DataFrame(dir_table, columns=["Designation", "Name", "DIN/PAN", "Tenure"])
             table.index = range(1, len(table) + 1)
-            st.markdown('<div class="heading">Directors</div>', unsafe_allow_html=True)
+            st.markdown('<h2>Directors</h2>', unsafe_allow_html=True)
             # st.markdown(f'<div class="output-box">{content_dir}</div>', unsafe_allow_html=True)
             st.dataframe(table, use_container_width=True)
         except Exception:
@@ -120,7 +120,7 @@ def tofler_func(option_company,flag):
                 asset_table.append([one,two,three])
             table = pd.DataFrame(asset_table, columns=["Asset Name", "No. of Loans", "Total Amount"])
             table.index = range(1, len(table) + 1)
-            st.markdown('<div class="heading">Charges on Assets</div>', unsafe_allow_html=True)
+            st.markdown('<h2>Charges on Assets</h2>', unsafe_allow_html=True)
             # st.markdown(f'<div class="output-box">{content_dir}</div>', unsafe_allow_html=True)
             st.dataframe(table, use_container_width=True)
         except Exception:
@@ -145,7 +145,7 @@ def tofler_func(option_company,flag):
                 key_table.append([one,two,three])
             table = pd.DataFrame(key_table, columns=["KEY", "VALUE", "INC/DEC"])
             table.index = range(1, len(table) + 1)
-            st.markdown('<div class="heading">Key Metrics</div>', unsafe_allow_html=True)
+            st.markdown('<h2>Key Metrics</h2>', unsafe_allow_html=True)
             # st.markdown(f'<div class="output-box">{content_dir}</div>', unsafe_allow_html=True)
             st.dataframe(table, use_container_width=True)
         except Exception:
@@ -177,14 +177,14 @@ def tofler_func(option_company,flag):
             # del fin_table[fin_table.columns[-1]]
             fin_table.index = range(1, len(fin_table) + 1)
 
-            st.markdown('<div class="heading">Financial Highlights</div>', unsafe_allow_html=True)
+            st.markdown('<h2>Financial Highlights</h2>', unsafe_allow_html=True)
             # financial_table_html=create_financial_table(fin_table)
             # components.html(financial_table_html, height=1000)
             st.dataframe(fin_table, use_container_width=True)
         except Exception:
             pass
         if content == "" and fin_ar == "" and key_table == "" and reg_d == "" and dir_table == "" and asset_table == "":
-            st.markdown('<div class="heading">No Data Found. Try Some other company</div>', unsafe_allow_html=True)
+            st.markdown('<h2>No Data Found. Try Some other company</h2>', unsafe_allow_html=True)
     except Exception:
         browser.quit()
     finally:
