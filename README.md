@@ -38,4 +38,88 @@ Install the necessary Python libraries using the following commands:
 pip install selenium
 pip install streamlit
 pip install pandas
+pip install webdriver-manager
 ```
+---
+## Installation and Setup
+
+1. **Clone the Repository**: Download or clone this repository to your local machine.
+
+2. **Download ChromeDriver**:
+   - Download ChromeDriver from the [ChromeDriver Download Page](https://sites.google.com/a/chromium.org/chromedriver/downloads).
+   - Ensure the downloaded ChromeDriver version matches your installed Chrome version.
+   - Place the `chromedriver` executable in a known location or add it to your system path.
+
+3. **Organize Files**:
+   - Ensure that `zauba.py`, `tofler.py`, and `WebScrapingProject.py` are located in the same project directory.
+
+---
+
+## Running the Application
+
+1. **Start Streamlit**: Run the Streamlit application from the terminal in the project directory using the command 
+```bash
+streamlit run WebScrapingProject.py
+```
+
+2. **Open the Application**: Once Streamlit starts, it will provide a local URL (usually `http://localhost:8501`) where the application can be accessed. Open this URL in a web browser.
+
+3. **Select Data Source and Start Scraping**:
+   - Choose between Zauba and Tofler as the data source on the main interface.
+   - Click the provided button to start the scraping process. Data will be displayed in a table format once fetched.
+
+4. **View Data**:
+   - The scraped data is displayed directly in the Streamlit dashboard.
+   - Use Streamlit’s built-in options to filter, sort, or export data if necessary.
+
+---
+
+## Code Overview
+
+### `zauba.py` and `tofler.py`
+
+These files contain the Selenium-based scraping functions for Zauba and Tofler. Each script performs the following actions:
+- **Open the Target Website**: Navigates to the specified page on Zauba or Tofler.
+- **Extract Data**: Locates and extracts relevant business data using Selenium selectors.
+- **Store Data**: Stores the data in a structured format (e.g., a list or pandas DataFrame) for easy access.
+
+**Note**: Custom selectors (XPath, CSS selectors) are used to locate elements on the target websites, and minor modifications to these selectors may be required if website layouts change.
+
+### `WebScrapingProject.py`
+
+This file serves as the main entry point for the Streamlit application. It includes:
+- **Import Statements**: Imports `zauba.py` and `tofler.py` to access scraping functions.
+- **Streamlit Interface**: Sets up the user interface with dropdown options for selecting the data source, buttons to initiate scraping, and a data table to display results.
+- **Error Handling**: Provides basic error handling to catch issues like network errors or site structure changes.
+
+---
+
+## Troubleshooting
+
+- **ChromeDriver Issues**:
+  - Ensure that your ChromeDriver version matches your installed version of Chrome.
+  - If the `chromedriver` executable is not in your system path, specify its location explicitly in `zauba.py` and `tofler.py`.
+
+- **Network or Website Issues**:
+  - If a website blocks the scraping requests, try adding delays between actions in the Selenium script.
+  - Consider using a VPN or proxy if access is restricted, but ensure this aligns with website policies.
+
+- **Element Selection Errors**:
+  - Websites may change their structure or class names periodically. If scraping fails, inspect the site’s HTML structure and update the selectors in the scripts.
+
+- **CAPTCHA Handling**:
+  - If the target website uses CAPTCHA, manual intervention may be required. Alternatively, consider using services that assist in CAPTCHA handling if necessary.
+
+---
+
+## Future Enhancements
+
+- **Data Caching**: Implement caching to reduce redundant scraping and load times.
+- **Multi-Page Scraping**: Add functionality to scrape data across multiple pages for comprehensive data retrieval.
+- **Data Export**: Enable data export to CSV or Excel for external analysis.
+
+---
+
+## License
+
+This project is licensed under the MIT License. Please see the `LICENSE` file for more details.
