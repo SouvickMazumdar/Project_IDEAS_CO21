@@ -13,7 +13,7 @@ This web application allows users to easily retrieve and display business data f
    - Open a terminal or command prompt.
    - Install the necessary libraries by running:
      ```
-     pip install selenium streamlit pandas
+     pip install selenium streamlit pandas webdriver-manager
      ```
 
 3. **Download ChromeDriver**:
