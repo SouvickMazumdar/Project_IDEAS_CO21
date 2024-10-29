@@ -15,7 +15,7 @@ if folder_name != "Project_IDEAS_CO21":
 # Function to load company list from a CSV file
 def company_list(csv_file):
     df = pd.read_csv(csv_file)
-    return sorted(set([i.title().upper().replace(" PVT.", "").replace(" LTD.", "").strip() for i in
+    return sorted(set([i.title().upper().replace(" PVT.", "").replace(" LTD.", "").replace(" LTD","").replace(" PVT","").strip() for i in
                        df["Company Name"].to_list()]))
 
 
