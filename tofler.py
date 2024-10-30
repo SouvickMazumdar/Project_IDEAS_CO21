@@ -226,7 +226,6 @@ def tofler_func(option_company,flag):
             pass
         if content == "" and fin_ar == "" and key_table == "" and reg_d == "" and dir_table == "" and asset_table == "":
             st.markdown('<h2>No Data Found. Try Some other company</h2>', unsafe_allow_html=True)
-            os.chdir("../../")
     except Exception:
         browser.quit()
     finally:
