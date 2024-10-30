@@ -35,10 +35,7 @@ The project contains three main Python files, each serving a specific purpose:
 Install the necessary Python libraries using the following commands:
 
 ```bash
-pip install selenium
-pip install streamlit
-pip install pandas
-pip install webdriver-manager
+pip install -r .\requirement.txt
 ```
 ---
 ## Installation and Setup
