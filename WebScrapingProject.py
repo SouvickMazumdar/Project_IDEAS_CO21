@@ -86,7 +86,7 @@ if submit:
             if comp == "Tofler":
                 tofler_func(data, flag=0)
             elif comp == "Zauba":
-                zauba_func(data)
+                zauba_func(data, flag=0)
             elif comp=="Screener":
                 screener_func(data,flag=0)
         except Exception as e:
