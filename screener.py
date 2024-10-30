@@ -60,6 +60,8 @@ def screener_func(option_company,flag):
             os.chdir("Backend")
             os.makedirs(f"{option_company}", exist_ok=True)
             os.chdir(f"{option_company}")
+            if os.path.exists(f'{option_company}.duckdb'):
+                os.remove(f'{option_company}.duckdb')
 
             conn = duckdb.connect(f'{option_company}.duckdb')
 
@@ -164,7 +166,7 @@ def screener_func(option_company,flag):
             st.markdown('<h2>Pros and Cons</h2>', unsafe_allow_html=True)
             # st.markdown(f'<div class="output-box">{content_dir}</div>', unsafe_allow_html=True)
             st.dataframe(table, use_container_width=True)
-            save_dataframe_to_duckdb(table, "Pros and Cons")
+            save_dataframe_to_duckdb(table, "Pros_and_Cons")
         except Exception:
             pass
 
@@ -204,7 +206,7 @@ def screener_func(option_company,flag):
             st.markdown('<h2>Quarterly Details (in Cr)</h2>', unsafe_allow_html=True)
             # st.markdown(f'<div class="output-box">{content_dir}</div>', unsafe_allow_html=True)
             st.dataframe(table, use_container_width=True)
-            save_dataframe_to_duckdb(table, "Quarterly Results")
+            save_dataframe_to_duckdb(table, "Quarterly_Results")
         except Exception as e:
             # print(e)
             pass
@@ -244,7 +246,7 @@ def screener_func(option_company,flag):
             st.markdown('<h2>Profit & Loss Details (in Cr)</h2>', unsafe_allow_html=True)
             # st.markdown(f'<div class="output-box">{content_dir}</div>', unsafe_allow_html=True)
             st.dataframe(table, use_container_width=True)
-            save_dataframe_to_duckdb(table, "Profit and Loss")
+            save_dataframe_to_duckdb(table, "Profit_and_Loss")
         except Exception as e:
             # print(e)
             pass
@@ -284,7 +286,7 @@ def screener_func(option_company,flag):
             st.markdown('<h2>Balance Sheet Details (in Cr)</h2>', unsafe_allow_html=True)
             # st.markdown(f'<div class="output-box">{content_dir}</div>', unsafe_allow_html=True)
             st.dataframe(table, use_container_width=True)
-            save_dataframe_to_duckdb(table, "Balance Sheet")
+            save_dataframe_to_duckdb(table, "Balance_Sheet")
         except Exception as e:
             # print(e)
             pass
