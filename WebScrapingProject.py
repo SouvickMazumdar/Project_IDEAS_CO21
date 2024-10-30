@@ -1,5 +1,7 @@
 import os
 
+from screener import screener_func
+
 # Adjust working directory if needed
 current_directory = os.getcwd()
 folder_name = os.path.basename(current_directory)
@@ -43,7 +45,7 @@ fetched_stocks = company_list("Fetch_list.csv")
 
 # Form 1: Data Source Selection and Company Selection
 with st.form("Details_Form"):
-    comp = st.radio("From which site do you want to access the data?", ["Tofler", "Zauba"], key="site_radio")
+    comp = st.radio("From which site do you want to access the data?", ["Tofler", "Zauba","Screener"], key="site_radio")
     data = st.selectbox("Enter the company name:", options=all_stocks, index=None, placeholder="Type Here...",
                         key="company_select")
     if data=="OTHER OPTION" or data=="":
@@ -85,6 +87,8 @@ if submit:
                 tofler_func(data, flag=0)
             elif comp == "Zauba":
                 zauba_func(data)
+            elif comp=="Screener":
+                screener_func(data,flag=0)
         except Exception as e:
             st.error("Error fetching data. Please try another company.")
             st.write(str(e))
