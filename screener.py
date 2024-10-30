@@ -35,7 +35,7 @@ def screener_func(option_company,flag):
             EC.presence_of_element_located((By.XPATH, "/html/body/main/div[2]/div/div/div/input"))
         )
         input_company.send_keys(option_company)
-        time.sleep(1)
+        time.sleep(2)
         # input_company.send_keys(Keys.ARROW_DOWN)
         # time.sleep(1)
         input_company.send_keys(Keys.ENTER)
