@@ -1,15 +1,19 @@
 import os
-import streamlit as st
-import pandas as pd
-from tofler import tofler_func
-from fetch_tofler import fetch_tofler
-from zauba import zauba_func
 
 # Adjust working directory if needed
 current_directory = os.getcwd()
 folder_name = os.path.basename(current_directory)
 if folder_name != "Project_IDEAS_CO21":
     os.chdir("../../")
+
+
+import streamlit as st
+import pandas as pd
+from tofler import tofler_func
+from fetch_tofler import fetch_tofler
+from zauba import zauba_func
+
+
 
 
 # Function to load company list from a CSV file
