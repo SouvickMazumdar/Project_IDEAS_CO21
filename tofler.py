@@ -74,6 +74,8 @@ def tofler_func(option_company,flag):
                 file.write(content)
             with open("Extract_date.txt", 'w') as file:
                 file.write(datetime.now().strftime("%d/%m/%Y"))
+            with open("Source_data.txt", 'w') as file:
+                file.write("Tofler")
 
             os.chdir("../../")
             if option_company not in company_list("Fetch_list.csv"):
