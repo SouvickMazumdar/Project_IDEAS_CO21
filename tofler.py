@@ -59,7 +59,8 @@ def tofler_func(option_company,flag):
             os.chdir("Backend")
             os.makedirs(f"{option_company}", exist_ok=True)
             os.chdir(f"{option_company}")
-
+            if os.path.exists(f'{option_company}.duckdb'):
+                os.remove(f'{option_company}.duckdb')
             conn = duckdb.connect(f'{option_company}.duckdb')
 
             # Function to save DataFrame to DuckDB, appending data to the same table
