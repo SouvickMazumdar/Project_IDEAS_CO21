@@ -22,7 +22,7 @@ This web application allows users to easily retrieve and display business data f
    - Place the `chromedriver` executable in a known location or add it to your system path.
 
 4. **Set Up Project Files**:
-   - Clone the repository or download the project files and place `zauba.py`, `tofler.py`, and `WebScrapingProject.py` in the same directory.
+   - Clone the repository or download the project files and place `zauba.py`, `tofler.py`, `screener.py` and `WebScrapingProject.py` in the same directory.
 
 ---
 
@@ -37,7 +37,7 @@ This web application allows users to easily retrieve and display business data f
    - Open the provided URL in a web browser (usually `http://localhost:8501`).
 
 2. **Select Data Source**:
-   - From the dropdown menu, choose either "Zauba" or "Tofler" as the data source.
+   - From the dropdown menu, choose either "Screener","Tofler","Zauba" as the data source.
 
 3. **Start Data Scraping**:
    - Click the "Fetch Data" button to start scraping.
