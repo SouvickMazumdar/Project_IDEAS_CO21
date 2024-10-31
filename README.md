@@ -1,13 +1,13 @@
 # Project_IDEAS_CO21
 # Web Scraping and Data Display Application
 
-This project is a web-based application built using **Streamlit** and **Selenium**. It enables users to scrape and display business data from [Tofler](https://www.tofler.in/) and [Zauba](https://www.zaubacorp.com/) on an interactive web interface. The application leverages **Selenium** to automate data extraction from these websites and displays the results on a **Streamlit** dashboard.
+This project is a web-based application built using **Streamlit** and **Selenium**. It enables users to scrape and display business data from [Tofler](https://www.tofler.in/), [Screener](https://www.screener.in/) and [Zauba](https://www.zaubacorp.com/) on an interactive web interface. The application leverages **Selenium** to automate data extraction from these websites and displays the results on a **Streamlit** dashboard.
 
 ---
 
 ## Features
 
-- **Automated Data Scraping**: Extracts data from Tofler and Zauba automatically using Selenium-based scripts.
+- **Automated Data Scraping**: Extracts data from Tofler, Screener and Zauba automatically using Selenium-based scripts.
 - **Interactive Web Interface**: Users can interact with the web application to view or refresh data from each website.
 - **Data Display**: Extracted data is displayed in a tabular format for easy viewing and analysis.
 - **Error Handling and Logging**: Logs scraping errors and other issues to ensure smooth performance.
@@ -16,9 +16,10 @@ This project is a web-based application built using **Streamlit** and **Selenium
 
 The project contains three main Python files, each serving a specific purpose:
 
+- **`screener.py`**: Handles data scraping from Screener using Selenium. The script extracts relevant business information, formats it, and saves it in a structured format.
 - **`zauba.py`**: Handles data scraping from Zauba using Selenium. The script extracts relevant business information, formats it, and saves it in a structured format.
-- **`tofler.py`**: Similar to `zauba.py`, this file handles scraping data from Tofler. The data fields and structure may vary based on the website layout.
-- **`WebScrapingProject.py`**: The main Streamlit application file that serves as the front-end interface. It imports data from `zauba.py` and `tofler.py` and presents it in a web-based dashboard.
+- **`tofler.py`**: Handles data scraping from Tofler using Selenium. The script extracts relevant business information, formats it, and saves it in a structured format. The data fields and structure may vary based on the website layout.
+- **`WebScrapingProject.py`**: The main Streamlit application file that serves as the front-end interface. It imports data from `screener.py`, `zauba.py` and `tofler.py` and presents it in a web-based dashboard.
 
 ---
 
@@ -48,7 +49,7 @@ pip install -r .\requirement.txt
    - Place the `chromedriver` executable in a known location or add it to your system path.
 
 3. **Organize Files**:
-   - Ensure that `zauba.py`, `tofler.py`, and `WebScrapingProject.py` are located in the same project directory.
+   - Ensure that `screener.py`, `tofler.py`, `zauba.py`,  and `WebScrapingProject.py` are located in the same project directory.
 
 ---
 
@@ -62,7 +63,7 @@ streamlit run WebScrapingProject.py
 2. **Open the Application**: Once Streamlit starts, it will provide a local URL (usually `http://localhost:8501`) where the application can be accessed. Open this URL in a web browser.
 
 3. **Select Data Source and Start Scraping**:
-   - Choose between Zauba and Tofler as the data source on the main interface.
+   - Choose between Screener, Zauba and Tofler as the data source on the main interface.
    - Click the provided button to start the scraping process. Data will be displayed in a table format once fetched.
 
 4. **View Data**:
@@ -73,10 +74,10 @@ streamlit run WebScrapingProject.py
 
 ## Code Overview
 
-### `zauba.py` and `tofler.py`
+### `screener.py`, `zauba.py` and `tofler.py`
 
-These files contain the Selenium-based scraping functions for Zauba and Tofler. Each script performs the following actions:
-- **Open the Target Website**: Navigates to the specified page on Zauba or Tofler.
+These files contain the Selenium-based scraping functions for Screener, Zauba and Tofler. Each script performs the following actions:
+- **Open the Target Website**: Navigates to the specified page on Screener, Zauba or Tofler.
 - **Extract Data**: Locates and extracts relevant business data using Selenium selectors.
 - **Store Data**: Stores the data in a structured format (e.g., a list or pandas DataFrame) for easy access.
 
@@ -85,7 +86,7 @@ These files contain the Selenium-based scraping functions for Zauba and Tofler. 
 ### `WebScrapingProject.py`
 
 This file serves as the main entry point for the Streamlit application. It includes:
-- **Import Statements**: Imports `zauba.py` and `tofler.py` to access scraping functions.
+- **Import Statements**: Imports `screener.py`, `zauba.py` and `tofler.py` to access scraping functions.
 - **Streamlit Interface**: Sets up the user interface with dropdown options for selecting the data source, buttons to initiate scraping, and a data table to display results.
 - **Error Handling**: Provides basic error handling to catch issues like network errors or site structure changes.
 
