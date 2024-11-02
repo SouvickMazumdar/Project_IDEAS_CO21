@@ -1,7 +1,7 @@
 # User Manual
 
 ## Overview
-This web application allows users to easily retrieve and display business data from Tofler and Zauba, two business information websites. The data is displayed on a user-friendly interface built with Streamlit. 
+This web application allows users to easily retrieve and display business data from Screener, Tofler and Zauba, two business information websites. The data is displayed on a user-friendly interface built with Streamlit. 
 
 ---
 
