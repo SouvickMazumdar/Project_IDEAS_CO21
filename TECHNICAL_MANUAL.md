@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-This project is a web-based data extraction and display tool built with **Streamlit** and **Selenium**. It scrapes data from two business information websites, Tofler, Screener and Zauba, and displays the retrieved information on a Streamlit interface.
+This project is a web-based data extraction and display tool built with **Streamlit** and **Selenium**. It scrapes data from three business information websites, Tofler, Screener and Zauba, and displays the retrieved information on a Streamlit interface.
 
 ---
 
@@ -51,6 +51,23 @@ This project is a web-based data extraction and display tool built with **Stream
   - Streamlit’s `dataframe` component displays data in a table, with options for sorting and filtering.
 
 ---
+## Database:
+
+### Tool Used: Duckdb
+DuckDB is an in-process **SQL OLAP** database for high-performance analytics directly on local files. Its lightweight architecture makes it ideal for real-time data processing and analytics without needing a server. It supports efficient columnar storage, which accelerates query execution on large datasets. With built-in support for **Parquet** and **CSV**, DuckDB seamlessly integrates with data science workflows, especially in Python and R environments. It offers ACID compliance for reliable transactions, and its SQL-based interface allows for easy adoption by users familiar with SQL databases. DuckDB’s low resource footprint makes it perfect for embedded analytics and local data exploration.
+
+#### Usage in our project:
+   To address the challenges of slow data scraping and unreliable results due to dynamic websites, we implemented a solution that caches data locally to reduce user wait times. For efficient storage, we chose DuckDB, a high-performance database optimized for analytical workloads.
+   
+Each scraping session in the repository's **Backend** folder automatically creates a unique folder using the `os` library for each company. This folder contains the scraped data in several formats: **overview.txt**, **source_data.txt**, and **<company_name>.duckdb**. The `.duckdb` file stores all dataframes fetched from the website, making it easy to query and retrieve specific data quickly.
+
+With DuckDB’s speed, retrieving data from these folders is fast, significantly enhancing the user experience. The Python script 
+**fetchTofler.py** handles the retrieval process from these company folders. The entire process, from folder creation to data updates, is automated. Each fetch refreshes the data with the latest information, ensuring users have the most accurate results. Additionally, a
+fetchlist file logs each new company added, keeping track of all records efficiently.
+
+This approach minimizes user wait times, providing quick, reliable access to data and ensuring users get timely and accurate results.
+
+--- 
 
 ## Maintenance and Updates
 
