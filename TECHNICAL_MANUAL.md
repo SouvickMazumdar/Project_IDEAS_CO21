@@ -53,10 +53,10 @@ This project is a web-based data extraction and display tool built with **Stream
 ---
 ## Database:
 
-### Tool Used: Duckdb
+### Tool Used: `Duckdb`
 DuckDB is an in-process **SQL OLAP** database for high-performance analytics directly on local files. Its lightweight architecture makes it ideal for real-time data processing and analytics without needing a server. It supports efficient columnar storage, which accelerates query execution on large datasets. With built-in support for **Parquet** and **CSV**, DuckDB seamlessly integrates with data science workflows, especially in Python and R environments. It offers ACID compliance for reliable transactions, and its SQL-based interface allows for easy adoption by users familiar with SQL databases. DuckDB’s low resource footprint makes it perfect for embedded analytics and local data exploration.
 
-#### Usage in our project:
+### Usage in our project:
    To address the challenges of slow data scraping and unreliable results due to dynamic websites, we implemented a solution that caches data locally to reduce user wait times. For efficient storage, we chose DuckDB, a high-performance database optimized for analytical workloads.
    
 Each scraping session in the repository's **Backend** folder automatically creates a unique folder using the `os` library for each company. This folder contains the scraped data in several formats: **overview.txt**, **source_data.txt**, and **<company_name>.duckdb**. The `.duckdb` file stores all dataframes fetched from the website, making it easy to query and retrieve specific data quickly.
