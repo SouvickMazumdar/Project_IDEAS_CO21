@@ -20,7 +20,7 @@ This project is a web-based data extraction and display tool built with **Stream
    - `WebScrapingProject.py` runs the Streamlit application, creating a user-friendly interface to select the data source and initiate scraping.
 
 2. **Selenium-Based Scraping Modules**:
-   -  **`tofler.py`**, **`screener.py`** and **`zauba.py`** contain functions for scraping business data from Zauba and Tofler, respectively.
+   -  **`tofler.py`**, **`screener.py`** and **`zauba.py`** contain functions for scraping business data from Tofler, Screener and Zauba, respectively.
    - Each module opens the target website, retrieves the required elements using XPath/CSS selectors, and stores the data in a structured format (list or pandas DataFrame).
 
 3. **Data Display**:
