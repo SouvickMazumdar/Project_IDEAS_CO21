@@ -29,7 +29,6 @@ The project contains three main Python files, each serving a specific purpose:
 
 - **Python**: Version 3.7 or higher
 - **Google Chrome**: Latest version for compatibility with Selenium
-- **ChromeDriver**: Ensure that the version of ChromeDriver matches your installed version of Chrome.
 
 ### Library Requirements
 
