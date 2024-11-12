@@ -2,4 +2,3 @@ selenium
 pandas
 duckdb
 streamlit
-webdriver-manager
