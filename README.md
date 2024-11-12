@@ -43,13 +43,14 @@ pip install -r .\requirement.txt
 
 1. **Clone the Repository**: Download or clone this repository to your local machine.
 
-2. **Download ChromeDriver**:
-   - Download ChromeDriver from the [ChromeDriver Download Page](https://sites.google.com/a/chromium.org/chromedriver/downloads).
-   - Ensure the downloaded ChromeDriver version matches your installed Chrome version.
-   - Place the `chromedriver` executable in a known location or add it to your system path.
-
-3. **Organize Files**:
+2. **Organize Files**:
    - Ensure that `screener.py`, `tofler.py`, `zauba.py`,  and `WebScrapingProject.py` are located in the same project directory.
+
+3. **Install required Librares**: Go inside the clone repo and run the below command in command prompt
+```bash
+pip install -r .\requirement.txt
+```
+---
 
 ---
 
