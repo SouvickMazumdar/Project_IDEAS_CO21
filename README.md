@@ -46,7 +46,7 @@ pip install -r .\requirement.txt
 2. **Organize Files**:
    - Ensure that `screener.py`, `tofler.py`, `zauba.py`,  and `WebScrapingProject.py` are located in the same project directory.
 
-3. **Install required Librares**: Go inside the clone repo and run the below command in command prompt
+3. **Install required Librares**: Go inside the cloned repo and run the below command in command prompt
 ```bash
 pip install -r .\requirement.txt
 ```
